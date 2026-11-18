@@ -1,8 +1,8 @@
 # Balkanos
 
-L'actualité du Sénégal en un coup d'œil.
+L'actualité en un coup d'œil.
 
-Site web d'information sur une seule page : actualités, médias (images et vidéos), commentaires et publication de contenus.
+Site web d'actualité générale sur une seule page : actualités, médias (images et vidéos), commentaires et publication de contenus.
 
 ## Technologies
 

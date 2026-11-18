@@ -134,7 +134,7 @@ export const PUBLICITE: Publicite = { type: 'vide' }
 /* --------------------------------------------------------------- Textes */
 
 export const TEXTES = {
-  description: "L'actualité du Sénégal en un coup d'œil.",
+  description: "L'actualité en un coup d'œil.",
   pubVide: 'Espace publicitaire',
   bandeauTest: 'MODE TEST',
   alertePaiementTest: 'MODE TEST — ne pas payer',
