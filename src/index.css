@@ -1,0 +1,258 @@
+@import 'tailwindcss';
+
+/* « fit » = écran assez grand pour tout afficher sans défilement (desktop). */
+@custom-variant fit (@media (min-width: 1024px) and (min-height: 600px));
+
+@theme {
+  --font-sans: 'Poppins', ui-sans-serif, system-ui, sans-serif;
+  --font-jura: 'Jura Variable', 'Jura', ui-sans-serif, system-ui, sans-serif;
+
+  --color-page: #0a0a0c;
+  --color-surface-haut: #1b1b1e;
+  --color-surface-bas: #0f0f11;
+  --color-texte: #f5f5f5;
+  --color-gris: #8e8e93;
+  --color-rouge: #e3262f;
+  --color-trait: rgb(255 255 255 / 0.08);
+}
+
+/* Texte qui s'illumine (utilisable avec hover:, group-hover:, etc.). */
+@utility lueur {
+  color: #fff;
+  text-shadow:
+    0 0 14px rgb(255 255 255 / 0.55),
+    0 0 34px rgb(255 255 255 / 0.25);
+}
+
+@layer base {
+  html {
+    background: var(--color-page);
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100dvh;
+    background: var(--color-page);
+    color: var(--color-texte);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -webkit-tap-highlight-color: transparent;
+    overflow-x: hidden;
+  }
+
+  button {
+    cursor: pointer;
+  }
+
+  :focus-visible {
+    outline: 2px solid rgb(255 255 255 / 0.75);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background: rgb(227 38 47 / 0.55);
+    color: #fff;
+  }
+}
+
+@layer components {
+  /* Surface « verre fumé noir » en relief : header, nav, cartes, pub, footer. */
+  .surface {
+    background: linear-gradient(180deg, var(--color-surface-haut) 0%, var(--color-surface-bas) 100%);
+    border: 1px solid var(--color-trait);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.06),
+      0 18px 40px -20px rgb(0 0 0 / 0.95);
+  }
+
+  /* Pilule noire en relief : boutons. */
+  .pilule {
+    background: linear-gradient(180deg, #222226 0%, #121214 100%);
+    border: 1px solid var(--color-trait);
+    box-shadow:
+      inset 0 1px 0 rgb(255 255 255 / 0.08),
+      0 10px 22px -12px rgb(0 0 0 / 0.9);
+  }
+
+  /* Fine ligne rouge qui s'estompe vers les bords. */
+  .ligne-rouge {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--color-rouge) 50%, transparent);
+  }
+
+  /* Champ de formulaire. */
+  .champ {
+    width: 100%;
+    min-height: 44px;
+    border-radius: 10px;
+    border: 1px solid var(--color-trait);
+    background: rgb(255 255 255 / 0.035);
+    padding: 0 12px;
+    font-size: 14px;
+    color: var(--color-texte);
+    transition:
+      border-color 0.2s,
+      background-color 0.2s;
+  }
+  .champ::placeholder {
+    color: rgb(142 142 147 / 0.75);
+  }
+  .champ:hover {
+    border-color: rgb(255 255 255 / 0.16);
+  }
+  .champ:focus {
+    outline: none;
+    border-color: rgb(255 255 255 / 0.45);
+    background: rgb(255 255 255 / 0.06);
+  }
+  .champ[aria-invalid='true'] {
+    border-color: rgb(227 38 47 / 0.8);
+  }
+
+  /* Barres de défilement discrètes dans les zones internes. */
+  .defile {
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: rgb(255 255 255 / 0.18) transparent;
+  }
+}
+
+/* ------------------------------------------------------------------ Effets
+   (composants de src/components/bits) */
+
+/* Reflet lumineux qui balaie un texte. */
+.shiny-text {
+  background-image: linear-gradient(110deg, #a2a2a8 38%, #ffffff 50%, #a2a2a8 62%);
+  background-size: 250% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shiny var(--shiny-duree, 4.5s) linear infinite;
+}
+@keyframes shiny {
+  0% {
+    background-position: 100% 0;
+  }
+  55%,
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+/* Reflet qui traverse un bouton au survol. */
+.glare {
+  position: relative;
+  overflow: hidden;
+}
+.glare::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(115deg, transparent 32%, rgb(255 255 255 / 0.2) 50%, transparent 68%);
+  transform: translateX(-130%);
+  transition: transform 0.75s cubic-bezier(0.2, 0.7, 0.2, 1);
+  pointer-events: none;
+}
+.glare:hover::after,
+.glare:focus-visible::after {
+  transform: translateX(130%);
+}
+
+/* Lueur qui suit la souris sur une carte. */
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  border-radius: inherit;
+  background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 50%), rgb(255 255 255 / 0.16), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.35s;
+  pointer-events: none;
+}
+.spotlight:hover::before,
+.spotlight:focus-visible::before {
+  opacity: 1;
+}
+
+/* Grain animé du fond. */
+.grain {
+  position: fixed;
+  inset: -120px;
+  z-index: 70;
+  pointer-events: none;
+  opacity: 0.05;
+  background-repeat: repeat;
+  animation: grain 0.8s steps(1) infinite;
+}
+@keyframes grain {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  17% {
+    transform: translate3d(-46px, 31px, 0);
+  }
+  34% {
+    transform: translate3d(38px, -52px, 0);
+  }
+  51% {
+    transform: translate3d(-71px, -18px, 0);
+  }
+  68% {
+    transform: translate3d(24px, 66px, 0);
+  }
+  85% {
+    transform: translate3d(-12px, -77px, 0);
+  }
+}
+
+/* Halo rose du logo : petit « respir » toutes les 4 s. */
+.halo-logo {
+  animation: respir 4s ease-in-out infinite;
+}
+@keyframes respir {
+  0%,
+  100% {
+    opacity: 0.55;
+    transform: scale(0.92);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.12);
+  }
+}
+
+/* Anneau discret autour du contenu de l'utilisateur dans l'aperçu. */
+.pulsation {
+  animation: pulsation 2.2s ease-in-out infinite;
+}
+@keyframes pulsation {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shiny-text,
+  .grain,
+  .halo-logo,
+  .pulsation {
+    animation: none;
+  }
+  .shiny-text {
+    background-position: 50% 0;
+  }
+  .glare::after {
+    display: none;
+  }
+  * {
+    scroll-behavior: auto !important;
+  }
+}

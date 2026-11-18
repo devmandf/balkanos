@@ -1,0 +1,113 @@
+[
+  {
+    "id": "actu-01",
+    "titre": "Dakar : la corniche s'illumine pour la saison",
+    "categorie": "Société",
+    "date": "2026-11-16",
+    "type": "image",
+    "src": "demo/actu-ville.svg",
+    "texte": "De nouveaux éclairages ont été installés le long de la corniche. Les promeneurs saluent une balade du soir plus agréable. (Texte de démonstration — actualité fictive.)"
+  },
+  {
+    "id": "actu-02",
+    "titre": "Football : soirée de gala au stade",
+    "categorie": "Sport",
+    "date": "2026-11-16",
+    "type": "image",
+    "src": "demo/actu-stade.svg",
+    "texte": "Tribunes pleines et pelouse impeccable : le public a répondu présent pour la rencontre du week-end. (Texte de démonstration — actualité fictive.)"
+  },
+  {
+    "id": "actu-03",
+    "titre": "Vidéo : coucher de soleil sur la Petite-Côte",
+    "categorie": "Vidéo",
+    "date": "2026-11-15",
+    "type": "video",
+    "src": "demo/video-01.mp4",
+    "poster": "demo/video-01.jpg",
+    "texte": "Dix secondes de couleurs pour finir la journée en douceur. (Vidéo de démonstration générée par ordinateur.)"
+  },
+  {
+    "id": "actu-04",
+    "titre": "Pêche : les pirogues de retour au quai",
+    "categorie": "Économie",
+    "date": "2026-11-15",
+    "type": "image",
+    "src": "demo/actu-mer.svg",
+    "texte": "Les pêcheurs annoncent de belles prises cette semaine et des étals bien garnis. (Texte de démonstration — actualité fictive.)"
+  },
+  {
+    "id": "actu-05",
+    "titre": "Économie : les jeunes pousses misent sur le numérique",
+    "categorie": "Économie",
+    "date": "2026-11-14",
+    "type": "image",
+    "src": "demo/actu-graphique.svg",
+    "texte": "De plus en plus de petites entreprises vendent en ligne et voient leur activité progresser. (Texte de démonstration — actualité fictive.)"
+  },
+  {
+    "id": "actu-06",
+    "titre": "Météo : des averses attendues en fin de semaine",
+    "categorie": "Météo",
+    "date": "2026-11-14",
+    "type": "image",
+    "src": "demo/actu-pluie.svg",
+    "texte": "Le ciel se couvre sur le centre du pays : pensez au parapluie avant de sortir. (Texte de démonstration — actualité fictive.)"
+  },
+  {
+    "id": "actu-07",
+    "titre": "Culture : un grand concert annoncé à Saint-Louis",
+    "categorie": "Culture",
+    "date": "2026-11-13",
+    "type": "image",
+    "src": "demo/actu-musique.svg",
+    "texte": "Plusieurs artistes partageront la scène pour une nuit de musique au bord du fleuve. (Texte de démonstration — actualité fictive.)"
+  },
+  {
+    "id": "actu-08",
+    "titre": "Vidéo : les couleurs de la Teranga",
+    "categorie": "Vidéo",
+    "date": "2026-11-13",
+    "type": "video",
+    "src": "demo/video-02.mp4",
+    "poster": "demo/video-02.jpg",
+    "texte": "Une ambiance chaude et dorée en quelques secondes. (Vidéo de démonstration générée par ordinateur.)"
+  },
+  {
+    "id": "actu-09",
+    "titre": "Transport : une nouvelle route éclairée vers l'intérieur",
+    "categorie": "Transport",
+    "date": "2026-11-12",
+    "type": "image",
+    "src": "demo/actu-route.svg",
+    "texte": "Des lampadaires bordent désormais l'axe sur plusieurs kilomètres pour des trajets de nuit plus sûrs. (Texte de démonstration — actualité fictive.)"
+  },
+  {
+    "id": "actu-10",
+    "titre": "Tech : une appli locale simplifie les paiements",
+    "categorie": "Tech",
+    "date": "2026-11-12",
+    "type": "image",
+    "src": "demo/actu-reseau.svg",
+    "texte": "Régler ses achats depuis son téléphone devient plus simple pour les petits commerces. (Texte de démonstration — actualité fictive.)"
+  },
+  {
+    "id": "actu-11",
+    "titre": "Tourisme : le Sine-Saloum séduit les visiteurs",
+    "categorie": "Tourisme",
+    "date": "2026-11-11",
+    "type": "image",
+    "src": "demo/actu-savane.svg",
+    "texte": "Baobabs, oiseaux et couchers de soleil : la région attire toujours plus de curieux. (Texte de démonstration — actualité fictive.)"
+  },
+  {
+    "id": "actu-12",
+    "titre": "Vidéo : nuit de fête en centre-ville",
+    "categorie": "Vidéo",
+    "date": "2026-11-11",
+    "type": "video",
+    "src": "demo/video-03.mp4",
+    "poster": "demo/video-03.jpg",
+    "texte": "Lumières et musique pour une soirée animée. (Vidéo de démonstration générée par ordinateur.)"
+  }
+]

@@ -1,0 +1,22 @@
+# Dépendances et fichiers générés
+node_modules/
+dist/
+
+# Clés et réglages locaux — NE JAMAIS envoyer sur GitHub
+.env
+.env.local
+.env.*.local
+
+# Divers
+*.log
+.DS_Store
+Thumbs.db
+.vite/
+
+# Documents et outils internes — restent sur l'ordinateur, jamais sur GitHub
+GUIDE-PRIVE.md
+supabase/
+scripts/
+Lancer-Balkanos.bat
+Lancer-Balkanos-telephone.bat
+.env.example
